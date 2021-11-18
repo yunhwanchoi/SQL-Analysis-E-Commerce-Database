@@ -4,5 +4,5 @@ The following report takes a mock, custom-built e-commerce database and uses SQL
 
 This analysis was based and built on the course 'Advanced SQL: MySQL Data Analysis & Business Intelligence' by Maven Analytics. The database used in this project was created by John Pauler of Maven Analytics. 
 
-Using `ipython-sql` package to connect MySQL server to Jupyter Notebook and make SQL queries.  
+`ipython-sql` package was used to connect MySQL server to Jupyter Notebook and make SQL queries.  
 
