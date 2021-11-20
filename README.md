@@ -1,6 +1,6 @@
 # SQL Business Analytics on E-Commerce Database
 
-The following README.md file includes the analysis without code. The full walk-through of the analysis, SQL queries, and codes for Python visualizations are available [here]().
+The following README.md file includes the analysis without code. The full walk-through of the analysis, SQL queries, and codes for Python visualizations are available [here](https://nbviewer.org/github/yunhwanchoi/SQL-Analysis-E-Commerce-Database/blob/main/SQL%20Business%20Analytics%20E-Commerce%20Database%20%28Code%29.ipynb).
 
 # Table of Contents 
 
@@ -34,7 +34,7 @@ The summary of the insights and  of this analysis can be found in the [Conclusio
 
 This analysis was built on the course material in 'Advanced SQL: MySQL Data Analysis & Business Intelligence' by Maven Analytics. The database used in this project was created by John Pauler of Maven Analytics. 
 
-Using `ipython-sql` package to connect MySQL server to Jupyter Notebook and make SQL queries.  
+I used `ipython-sql` package to connect MySQL server to Jupyter Notebook and make SQL queries, and pandas/matplotlib/seaborn for further visualizations.  
  
 
 # II. Database<a class="anchor" id="2"></a>
