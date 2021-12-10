@@ -8,7 +8,9 @@ The following README.md file includes the analysis without code. The full walk-t
 
 [II. Database](#2)
 
-[III. Analysis](#3)
+[III. Insights and Recommendations](#3)
+
+[IV. Analysis](#4)
 - [A. Channel-Level Performance](#3a)
   - [1. Quarterly Traffic Volume](#3a1)
   - [2. Unpaid Traffic % (Organic Searches)](#3a2)
@@ -22,14 +24,14 @@ The following README.md file includes the analysis without code. The full walk-t
   - [2. Cross-Sold Products](#3c2)
   - [3. Monthly Trending for Refunds](#3c3)
  
-[IV. Conclusion](#4)
+
 
 # I. Introduction<a class="anchor" id="1"></a>
 
 
 The following report takes a mock, custom-built e-commerce database and uses SQL queries to extract data and insights valuable for a potential e-commerce business, such as website and traffic performance, product-level sales performance, and how customers access and interact with the website. Based on the results of the queries, **I conducted analysis to help the business understand various user-interaction trends with the website, as well as to make bidding recommendations for the growth and profitability of the mock business.**
 
-The summary of the insights and  of this analysis can be found in the [Conclusion](#4).
+The summary of the insights and  of this analysis can be found in the [Insights and Recommendations](#3).
 
 
 This analysis was built on the course material in 'Advanced SQL: MySQL Data Analysis & Business Intelligence' by Maven Analytics. The database used in this project was created by John Pauler of Maven Analytics. 
@@ -89,7 +91,45 @@ The database **mavenfuzzyfactory** contains customer interaction information wit
 **The database has the following schema:**
 ![image](https://user-images.githubusercontent.com/52474489/142564363-8aed1666-1489-47d6-9839-347647da2875.png)
 
-# III. Analysis <a class="anchor" id="3"></a>
+# III. Insights and Recommendations<a class="anchor" id="3"></a>
+
+To summarize some of the insights gained about the mock business after querying the database, as well as recommendations for the business:
+
+**Channel-Level Performance**
+- Majority of traffic comes from paid marketing channels for gsearch, specifically for nonbrand gsearch campaigns. Nonbrand channels seem to be more susceptible to seasonality, especially during the holiday season at the end of the year. **Increase bidding for nonbrand campaigns during the holiday season.**
+
+
+- Proportion of unpaid traffic for bsearch channels is slightly (but consistently) greater than gsearch channels. **Consider bidding up bsearch marketing campaigns, or conduct some sort of A/B Testing to see how the bsearch traffic responds to marketing changes and if the proportion of unpaid bsearch traffic changes at all. This will help understand how the ad campaign is influencing bsearch's traffic.**
+
+
+- The period after 2013 Q2 saw dramatic changes in traffic and conversion rates for the website sessions. I hypothesized that marketing campaigns were significantly bidded up at this point. When bidding up marketing 
+    - Paid traffic for a commonly used search engine is increased at a more dramatic scale
+    - Proportion of unpaid traffic (organic search/direct type in) is increased, specifically for lesser used search engines such as bsearch
+    - Conversion rate improves relatively greater for customers coming through brand targetted marketing campaigns
+
+
+**Page-Level Performance**
+
+- The clickthrough rate for the lander page is little over half. **There may be opportunities to improve the landing page performance by making the design or structure a more accessible or appealing for the user.**
+
+-  The clickthrough rate for the billing page is relatively lower and is the most important page to optimize clickthrough rate from. **It is worth examining if there are improvements that could be made on the billing page to encourage more orders.**
+
+- The bounce rate for the most recently implemented `/lander-5` has the lowest bounce rate compared to previously tested lander pages. **If possible, examine the changes made for `/lander-5` to inform further improvements on the lander page.**
+
+- The order rate for the most recently implemented `/billing-2` has a higher order rate compared to the previously tested billing page. **If possible, examine the changes made for `/billing-2` to inform further improvements on the billing page.**
+
+**Product-Level Performance**
+
+- **Investigate the collective drop in the volume of sales from 2015 Q1.**
+
+- Product 4 is the most cross-sold item and is rarely bought as a primary product. **Continue marketing Product 4 as an add-on items to other products, especially for cases where users chose product 1 as the primary product.**
+
+- The refund rates for product 3 is consistently the highest compared to all other products, hovering around 4% to 8%. **Look into product 3 by inspecting the quality of the product and incorporating feedback from customer reviews.**
+
+The analysis used to reach these conclusions and recommmendations are detailed below.
+
+
+# IV. Analysis <a class="anchor" id="4"></a>
 
 ## A. Channel-Level Performance<a class="anchor" id="3a"></a>
 
@@ -303,45 +343,6 @@ Monitoring trends with refund helps the business troubleshoot if there are any i
 - It seems that often times refund rates for each product moves closely together for the most part, which is interesting. When refund rates collectively increase/decrease for all products may reflect an increase/decrease in the manufacturing/packaging quality for all products for that time period. 
 - Overall, product 3 seems to be refunded the most, then product 1, product 2, and product 4. There is a very high spike of refunds only in product 1 around the summer of 2014 but this seems to be taken care of as the refund rates dramatically lowered after a certain point. 
 - **The refund rates for product 3 hovers around 4% to 8%, which is concerning and definitely worth looking into, by both inspecting the quality of the product and incorporating feedback from customer reviews.**
-
-
-# IV. Conclusion<a class="anchor" id="4"></a>
-
-
-To summarize some of the insights gained about the mock business after querying the database, as well as recommendations for the business:
-
-**Channel-Level Performance**
-- Majority of traffic comes from paid marketing channels for gsearch, specifically for nonbrand gsearch campaigns. Nonbrand channels seem to be more susceptible to seasonality, especially during the holiday season at the end of the year. **Increase bidding for nonbrand campaigns during the holiday season.**
-
-
-- Proportion of unpaid traffic for bsearch channels is slightly (but consistently) greater than gsearch channels. **Consider bidding up bsearch marketing campaigns, or conduct some sort of A/B Testing to see how the bsearch traffic responds to marketing changes and if the proportion of unpaid bsearch traffic changes at all. This will help understand how the ad campaign is influencing bsearch's traffic.**
-
-
-- The period after 2013 Q2 saw dramatic changes in traffic and conversion rates for the website sessions. I hypothesized that marketing campaigns were significantly bidded up at this point. When bidding up marketing 
-    - Paid traffic for a commonly used search engine is increased at a more dramatic scale
-    - Proportion of unpaid traffic (organic search/direct type in) is increased, specifically for lesser used search engines such as bsearch
-    - Conversion rate improves relatively greater for customers coming through brand targetted marketing campaigns
-
-
-**Page-Level Performance**
-
-- The clickthrough rate for the lander page is little over half. **There may be opportunities to improve the landing page performance by making the design or structure a more accessible or appealing for the user.**
-
--  The clickthrough rate for the billing page is relatively lower and is the most important page to optimize clickthrough rate from. **It is worth examining if there are improvements that could be made on the billing page to encourage more orders.**
-
-- The bounce rate for the most recently implemented `/lander-5` has the lowest bounce rate compared to previously tested lander pages. **If possible, examine the changes made for `/lander-5` to inform further improvements on the lander page.**
-
-- The order rate for the most recently implemented `/billing-2` has a higher order rate compared to the previously tested billing page. **If possible, examine the changes made for `/billing-2` to inform further improvements on the billing page.**
-
-**Product-Level Performance**
-
-- **Investigate the collective drop in the volume of sales from 2015 Q1.**
-
-- Product 4 is the most cross-sold item and is rarely bought as a primary product. **Continue marketing Product 4 as an add-on items to other products, especially for cases where users chose product 1 as the primary product.**
-
-- The refund rates for product 3 is consistently the highest compared to all other products, hovering around 4% to 8%. **Look into product 3 by inspecting the quality of the product and incorporating feedback from customer reviews.**
-
-
 
 
 
